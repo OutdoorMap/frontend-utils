@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+</head>
+<body>
+
+	<h1>Attribute</h1>
+
+	<div class="a b c">
+        Ok.
+	</div>
+
+	<script type="module">
+		import { toggleClass, containsAnyClass, containsAllClasses } from '/js/attribute.js'
+
+    toggleClass('.a', 'c', false)
+
+    console.log('containsAnyClass', containsAnyClass('.a', 'b c', false))
+
+    console.log('containsAllClasses', containsAllClasses('.a', 'a b c', false))
+	</script>
+
+</body>
+</html>

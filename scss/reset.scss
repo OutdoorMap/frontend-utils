@@ -29,14 +29,12 @@ html {
   line-height: 1.4;
   color: #000;
   background-color: #fff;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 
   // ms scrollbar
   -ms-overflow-style: -ms-autohiding-scrollbar;
 
   // killing 300ms touch delay
-  -ms-touch-action: manipulation;
   touch-action: manipulation;
 }
 
@@ -53,7 +51,7 @@ figure {
 }
 
 svg {
-  fill: currentColor;
+  fill: currentcolor;
   vertical-align: middle;
   pointer-events: none;
 }
@@ -74,15 +72,15 @@ em {
 code,
 kbd,
 samp {
-  font-family: "monospace", monospace;
+  font-family: monospace;
   font-size: 1em;
 }
 
 input,
 textarea,
 select {
-  -webkit-appearance: none;
-  -moz-appearance: textfield;
+  appearance: none;
+  appearance: textfield;
 }
 
 button {
@@ -101,13 +99,18 @@ select:-moz-focusring {
 input::-webkit-search-cancel-button,
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
+  appearance: none;
   margin: 0;
 }
 
-input::-ms-reveal { display: none; }
-input::-ms-clear  { display: none; }
+input::-ms-reveal {
+  display: none;
+}
 
-input::-webkit-input-placeholder { opacity: 1; }
-input::-moz-placeholder          { opacity: 1; }
-input:-ms-input-placeholder      { opacity: 1; }
+input::-ms-clear {
+  display: none;
+}
+
+input::placeholder {
+  opacity: 1;
+}
