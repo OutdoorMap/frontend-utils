@@ -1,0 +1,31 @@
+// -----------------------------------------------------------------------------
+// TRUNCATES TEXT
+
+@mixin truncate-text($method: ellipsis) {
+  text-overflow: $method;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+// -----------------------------------------------------------------------------
+// HIDES TEXT LINES
+
+@mixin truncate-text-lines($num: 3, $fallback-lh: null) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $num;
+
+  @if $fallback-lh {
+    max-height: $fallback-lh;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// HIDES TEXT
+
+@mixin hide-text {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}

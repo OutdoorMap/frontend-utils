@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+</head>
+<body>
+
+	<h1>Event</h1>
+
+	<!-- a -->
+	<p>
+		<button type="button" class="a1">Click</button>
+		<button type="button" class="a2">&larr; Remove event</button>
+	</p>
+
+	<!-- b -->
+	<p>
+		<button type="button" class="b1">Click or mouseenter</button>
+		<button type="button" class="b2">&larr; Remove all events</button>
+	</p>
+
+	<!-- c -->
+	<p>
+		<button type="button" class="c1">Click</button>
+		<button type="button" class="c2">&larr; Remove namespaced event</button>
+	</p>
+
+	<!-- d -->
+	<p>
+		<button type="button" class="d1">Click</button>
+		<button type="button" class="d2">&larr; Trigger click</button>
+	</p>
+
+	<!-- e -->
+	<p>
+		<input type="text" placeholder="Data to pass"  class="e1" />
+		<button type="button" class="e2">&larr; Trigger custom event that alerts the passed data</button>
+	</p>
+
+    <!-- f -->
+	<p>
+		<button type="button" class="f1">Dynamically insert button with a delegated event listener &rarr;</button>
+	</p>
+
+	<script type="module">
+		import { addEventListener, removeEventListener, triggerEvent, delegateEventListener } from '/js/event.js'
+
+		// a
+		;(() => {
+			const btn1 = document.querySelector('.a1')
+			const btn2 = document.querySelector('.a2')
+
+			addEventListener(btn1, 'click', () => {
+				alert('Clicked')
+			})
+
+			addEventListener(btn2, 'click', () => {
+				alert('Event listener removed')
+				removeEventListener(btn1, 'click')
+			})
+		})();
+
+		// b
+		;(() => {
+			const btn1 = document.querySelector('.b1')
+			const btn2 = document.querySelector('.b2')
+
+			addEventListener(btn1, 'click mouseenter', (e) => {
+				alert(`Event: ${e.type}`)
+			})
+
+			addEventListener(btn2, 'click', () => {
+				alert('All event listeners removed')
+				removeEventListener(btn1)
+			})
+		})();
+
+		// c
+		;(() => {
+			const btn1 = document.querySelector('.c1')
+			const btn2 = document.querySelector('.c2')
+
+			addEventListener(btn1, 'click', (e) => {
+				alert('Usual event')
+			})
+
+			addEventListener(btn1, 'click.namespace', (e) => {
+				alert('NAMESPACED event')
+			})
+
+			addEventListener(btn2, 'click', () => {
+				alert('Namespaced event listener removed')
+				removeEventListener(btn1, 'click.namespace')
+			})
+		})();
+
+		// d
+		;(() => {
+			const btn1 = document.querySelector('.d1')
+			const btn2 = document.querySelector('.d2')
+
+			addEventListener(btn1, 'click', () => {
+				alert('Clicked')
+			})
+
+			addEventListener(btn2, 'click', () => {
+				triggerEvent(btn1, 'click')
+			})
+		})();
+
+		// e
+		;(() => {
+			const input = document.querySelector('.e1')
+			const btn = document.querySelector('.e2')
+
+			addEventListener(btn, 'click', () => {
+				triggerEvent(btn, 'customEvent', input.value)
+			})
+
+			addEventListener(btn, 'customEvent', (e) => {
+				alert(`Data received: ${e.detail}`)
+			})
+		})();
+
+        // f
+		;(() => {
+			const btn = document.querySelector('.f1')
+            let index = 0
+
+			addEventListener(btn, 'click', () => {
+                index++
+                btn.insertAdjacentHTML('afterend', `
+                    <button type="button" class="f2" data-index="${index}">
+                        Click #${index}
+                    </button>
+                `)
+			})
+
+			delegateEventListener('.f2', 'click.xxx', (e, el) => {
+				alert(`Clicked #${el.getAttribute('data-index')}`)
+			})
+		})();
+	</script>
+
+</body>
+</html>
