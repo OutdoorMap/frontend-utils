@@ -3,7 +3,7 @@
   "name": "@outdoormap/frontend-utils",
   "description": "Outdoormap > Front End Utilities",
   "version": "0.0.4",
-  "author": "Odd Camp <support@outdoormap.com>",
+  "author": "OutdoorMap <support@outdoormap.com>",
   "license": "MIT",
   "main": "index.js",
   "publishConfig": {
