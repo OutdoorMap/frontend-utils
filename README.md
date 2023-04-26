@@ -4,5 +4,5 @@
 $ yarn add @outdoormap/frontend-utils
 ```
 
-- [README-JS](frontend-utils/blob/main/README-JS.md)
-- [README-SCSS](frontend-utils/blob/main/README-SCSS.md)
+- [README-JS](https://github.com/OutdoorMap/frontend-utils/blob/main/README-JS.md)
+- [README-SCSS](https://github.com/OutdoorMap/frontend-utils/blob/main/README-SCSS.md)
