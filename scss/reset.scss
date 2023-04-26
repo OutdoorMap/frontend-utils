@@ -76,6 +76,19 @@ samp {
   font-size: 1em;
 }
 
+summary {
+  cursor: pointer;
+  list-style: none;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
 input,
 textarea,
 select {
@@ -83,34 +96,34 @@ select {
   appearance: textfield;
 }
 
-button {
-  cursor: pointer;
+input {
+  &::-webkit-search-cancel-button,
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+  }
+
+  &::-ms-reveal {
+    display: none;
+  }
+
+  &::-ms-clear {
+    display: none;
+  }
+
+  &::placeholder {
+    opacity: 1;
+  }
 }
 
-select::-ms-expand {
-  display: none;
-}
+select {
+  &::-ms-expand {
+    display: none;
+  }
 
-select:-moz-focusring {
-  text-shadow: 0 0 0 #000;
-  color: transparent;
-}
-
-input::-webkit-search-cancel-button,
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  appearance: none;
-  margin: 0;
-}
-
-input::-ms-reveal {
-  display: none;
-}
-
-input::-ms-clear {
-  display: none;
-}
-
-input::placeholder {
-  opacity: 1;
+  &:-moz-focusring {
+    text-shadow: 0 0 0 #000;
+    color: transparent;
+  }
 }
