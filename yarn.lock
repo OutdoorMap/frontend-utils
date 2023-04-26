@@ -2284,10 +2284,10 @@ es-to-primitive@^1.2.1:
     is-date-object "^1.0.1"
     is-symbol "^1.0.2"
 
-esbuild-plugin-eslint@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/esbuild-plugin-eslint/-/esbuild-plugin-eslint-0.1.1.tgz#cbc4f6a8d10dd70f915ca7bf41af24ca3501a705"
-  integrity sha512-nGZ7tvJDAAiKAZv1v6604qsWFsMDzF2jY0KkHy07ysLRqUuTr6u06t7Cuhd2L/mYh8onVSiDKDUI6TWzbrcBgA==
+esbuild-plugin-eslint@^0.3.6:
+  version "0.3.6"
+  resolved "https://registry.yarnpkg.com/esbuild-plugin-eslint/-/esbuild-plugin-eslint-0.3.6.tgz#2ab1c01d54e8eba6a6017ec93107e73416510c0a"
+  integrity sha512-1S2tK3GCCUK8BE0L1H6fgEydvPi+nZFb0HC86csQ2l0GsFdZpGMj1khAJ91DnvlfINrfH4x6VLeNwXimowR7pw==
 
 escalade@^3.1.1:
   version "3.1.1"
