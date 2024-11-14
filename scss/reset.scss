@@ -97,6 +97,10 @@ select {
 }
 
 input {
+  &::-webkit-date-and-time-value {
+    text-align: left;
+  }
+
   &::-webkit-search-cancel-button,
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {

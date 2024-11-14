@@ -2,7 +2,7 @@
   "private": false,
   "name": "@outdoormap/frontend-utils",
   "description": "Outdoormap > Front End Utilities",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "OutdoorMap <support@outdoormap.com>",
   "license": "MIT",
   "main": "index.js",
