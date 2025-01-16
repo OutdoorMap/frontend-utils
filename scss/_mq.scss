@@ -1,3 +1,7 @@
+@use "sass:list";
+@use "sass:meta";
+@use "sass:map";
+
 // -----------------------------------------------------------------------------
 // MEDIA QUERIES BREAKPOINTS
 // Used by the mq() mixin
@@ -35,11 +39,11 @@ $mq-breakpoints: (
     $arg1: list.nth($group, 1);
 
     // orientation
-    @if index(("landscape", "portrait"), $arg1) {
+    @if list.index(("landscape", "portrait"), $arg1) {
       $conditions: list.append($conditions, "(orientation: #{$arg1})");
     }
     // between
-    @else if index(("between", "betweenEq"), $arg1) {
+    @else if list.index(("between", "betweenEq"), $arg1) {
       $from: get-mq-point(list.nth($group, 2), "up");
       @if $arg1 == "betweenEq" {
         $from: get-mq-point(list.nth($group, 2), "upEq");
@@ -56,7 +60,7 @@ $mq-breakpoints: (
       $direction: list.nth($group, 2);
       $point: get-mq-point($arg1, $direction);
 
-      @if index(("up", "upEq"), $direction) {
+      @if list.index(("up", "upEq"), $direction) {
         $direction: "min-width";
       } @else {
         // down
@@ -88,7 +92,7 @@ $mq-breakpoints: (
 // RETINA QUERY
 
 @mixin mq-retina {
-  /* stylelint-disable media-feature-name-no-unknown, media-feature-name-no-vendor-prefix */
+  /* stylelint-disable media-feature-name-no-unknown, media-feature-name-no-vendor-prefix, media-feature-range-notation */
   @media screen and (min-device-pixel-ratio: 2),
     screen and (min--moz-device-pixel-ratio: 2),
     screen and (-o-min-device-pixel-ratio: 2/1),
@@ -97,14 +101,14 @@ $mq-breakpoints: (
     screen and (min-resolution: 2dppx) {
     @content;
   }
-  /* stylelint-emable */
+  /* stylelint-enable */
 }
 
 // -----------------------------------------------------------------------------
 // get mq()-ready breakpoint value
 
 @function get-mq-point($value, $direction) {
-  @if type-of($value) == "string" {
+  @if meta.type-of($value) == "string" {
     $value: map.get($mq-breakpoints, $value);
   } @else {
     $value: strip-unit($value);

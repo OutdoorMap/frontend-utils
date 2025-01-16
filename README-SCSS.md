@@ -21,11 +21,17 @@ This will:
 - Make all of the SASS utilities available
 - Inject Reset CSS
 
-Separate imports available:
+Individual imports available:
 
 ```scss
 @import "@outdoormap/frontend-utils/scss/reset";
 @import "@outdoormap/frontend-utils/scss/utils";
+```
+
+Reset CSS:
+
+```js
+import "@outdoormap/frontend-utils/dist/reset.css"
 ```
 
 ## Development

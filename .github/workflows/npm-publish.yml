@@ -1,4 +1,4 @@
-name: Node.js Package
+name: NPM publish
 
 on:
   release:
@@ -21,6 +21,12 @@ jobs:
 
       - name: Install dependencies
         run: yarn install
+
+      - name: Lint SCSS
+        run: yarn lint-scss
+
+      - name: Compile SASS
+        run: yarn compile-sass
 
       - name: Publish the package to GPR
         run: |
