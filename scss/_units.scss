@@ -1,3 +1,6 @@
+@use "sass:math";
+@use "sass:list";
+
 // -----------------------------------------------------------------------------
 // STRIP UNIT
 
@@ -30,7 +33,7 @@ $em-base: 16px !default;
   @for $i from 1 through $max {
     $i-val: list.nth($values, $i);
 
-    @if $i-val != auto and unit($i-val) != "%" {
+    @if $i-val != auto and math.unit($i-val) != "%" {
       $i-val: math.div(strip-unit($i-val), strip-unit($base-value)) * $type;
     }
 
@@ -38,7 +41,7 @@ $em-base: 16px !default;
   }
 
   @if $max == 1 {
-    @return nth($new-values, 1);
+    @return list.nth($new-values, 1);
   } @else {
     @return $new-values;
   }
