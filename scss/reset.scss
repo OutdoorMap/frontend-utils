@@ -19,7 +19,7 @@
 *::after {
   box-sizing: border-box;
 
-  // font smoothing
+  // font smoothing (https://developer.mozilla.org/en-US/docs/Web/CSS/font-smooth)
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -30,9 +30,6 @@ html {
   color: #000;
   background-color: #fff;
   text-size-adjust: 100%;
-
-  // ms scrollbar
-  -ms-overflow-style: -ms-autohiding-scrollbar;
 
   // killing 300ms touch delay
   touch-action: manipulation;
@@ -94,7 +91,6 @@ input,
 textarea,
 select {
   appearance: none;
-  appearance: textfield;
 }
 
 input {
@@ -109,24 +105,13 @@ input {
     margin: 0;
   }
 
-  &::-ms-reveal {
-    display: none;
-  }
-
-  &::-ms-clear {
-    display: none;
-  }
-
   &::placeholder {
     opacity: 1;
+    color: currentcolor;
   }
 }
 
 select {
-  &::-ms-expand {
-    display: none;
-  }
-
   &:-moz-focusring {
     text-shadow: 0 0 0 #000;
     color: transparent;
