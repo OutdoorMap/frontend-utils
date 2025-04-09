@@ -1,23 +1,55 @@
 {
-  "plugins": [
-    "stylelint-scss",
-    "stylelint-prettier",
-    "stylelint-at-rule-import-case"
-  ],
+  "root": true,
   "extends": [
-    "stylelint-config-standard-scss",
-    "stylelint-config-prettier-scss"
+    "stylelint-config-standard",
+    "stylelint-config-css-modules",
+    "stylelint-prettier/recommended"
   ],
   "rules": {
     "prettier/prettier": true,
-    "scss/at-extend-no-missing-placeholder": null,
-    "scss/double-slash-comment-empty-line-before": null,
-    "scss/dollar-variable-empty-line-before": null,
+    "import-notation": null,
     "no-descending-specificity": null,
+    "comment-empty-line-before": null,
+    "font-family-name-quotes": "always-unless-keyword",
     "selector-class-pattern": [
-      "^(-){0,2}?[a-z][a-z0-9\\-]*[a-z0-9]$",
+      "^(--)?[a-z0-9]+(-[a-z0-9]+)*$",
       {
-        "message": "Expected class selector to be kebab-case"
+        "message": "Expected class selector \"%s\" to be kebab-case"
+      }
+    ],
+    "at-rule-empty-line-before": [
+      "always",
+      {
+        "except": ["inside-block", "blockless-after-same-name-blockless", "blockless-after-blockless", "first-nested"],
+        "ignore": ["after-comment", "first-nested", "inside-block", "blockless-after-same-name-blockless", "blockless-after-blockless"]
+      }
+    ],
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "define-mixin",
+          "mixin",
+          "custom-media"
+        ]
+      }
+    ],
+    "function-no-unknown": [
+      true,
+      {
+        "ignoreFunctions": [
+          "emify",
+          "remify",
+          "color-opacity"
+        ]
+      }
+    ],
+    "declaration-property-value-no-unknown": [
+      true,
+      {
+        "ignoreProperties": {
+          "/.+/": "/(emify|remify|color-opacity)\\(/"
+        }
       }
     ]
   }

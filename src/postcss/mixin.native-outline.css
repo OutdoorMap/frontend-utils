@@ -1,0 +1,4 @@
+@define-mixin native-outline {
+  box-shadow: 0 0 0 4px Highlight;
+  box-shadow: 0 0 0 4px -webkit-focus-ring-color;
+}

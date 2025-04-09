@@ -1,0 +1,4 @@
+@define-mixin anchor {
+  text-decoration-line: underline;
+  color: var(--anchor-color, var(--color-dark-slate-gray));
+}

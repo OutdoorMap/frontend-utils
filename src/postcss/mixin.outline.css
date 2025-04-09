@@ -1,0 +1,5 @@
+@define-mixin outline {
+  outline: 1px dotted;
+  outline: 4px auto Highlight;
+  outline: 4px auto -webkit-focus-ring-color;
+}

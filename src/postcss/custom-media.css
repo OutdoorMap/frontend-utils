@@ -1,0 +1,35 @@
+/* 480 */
+@custom-media --xsmall-up (width >= 30em);
+@custom-media --xsmall-down (width < 30em);
+
+/* 640 */
+@custom-media --small-up (width >= 40em);
+@custom-media --small-down (width < 40em);
+
+/* 768 */
+@custom-media --medium-up (width >= 48em);
+@custom-media --medium-down (width < 48em);
+
+/* 960 */
+@custom-media --large-up (width >= 60em);
+@custom-media --large-down (width < 60em);
+
+/* 1080 */
+@custom-media --xlarge-up (width >= 67.5em);
+@custom-media --xlarge-down (width < 67.5em);
+
+/* 1200 */
+@custom-media --xxlarge-up (width >= 75em);
+@custom-media --xxlarge-down (width < 75em);
+
+/* 1400 */
+@custom-media --xxxlarge-up (width >= 87.5em);
+@custom-media --xxxlarge-down (width < 87.5em);
+
+/* 1680 */
+@custom-media --xxxxlarge-up (width >= 105em);
+@custom-media --xxxxlarge-down (width < 105em);
+
+/* mobile */
+@custom-media --mobile-up (--medium-up);
+@custom-media --mobile-down (--medium-down);

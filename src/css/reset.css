@@ -18,8 +18,6 @@
 *::before,
 *::after {
   box-sizing: border-box;
-
-  // font smoothing (https://developer.mozilla.org/en-US/docs/Web/CSS/font-smooth)
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -30,8 +28,6 @@ html {
   color: #000;
   background-color: #fff;
   text-size-adjust: 100%;
-
-  // killing 300ms touch delay
   touch-action: manipulation;
 }
 
@@ -77,10 +73,10 @@ samp {
 summary {
   cursor: pointer;
   list-style: none;
+}
 
-  &::-webkit-details-marker {
-    display: none;
-  }
+summary::-webkit-details-marker {
+  display: none;
 }
 
 button {
@@ -93,27 +89,23 @@ select {
   appearance: none;
 }
 
-input {
-  &::-webkit-date-and-time-value {
-    text-align: left;
-  }
-
-  &::-webkit-search-cancel-button,
-  &::-webkit-outer-spin-button,
-  &::-webkit-inner-spin-button {
-    appearance: none;
-    margin: 0;
-  }
-
-  &::placeholder {
-    opacity: 1;
-    color: currentcolor;
-  }
+input::-webkit-date-and-time-value {
+  text-align: left;
 }
 
-select {
-  &:-moz-focusring {
-    text-shadow: 0 0 0 #000;
-    color: transparent;
-  }
+input::-webkit-search-cancel-button,
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+input::placeholder {
+  opacity: 1;
+  color: currentcolor;
+}
+
+select:-moz-focusring {
+  text-shadow: 0 0 0 #000;
+  color: transparent;
 }
