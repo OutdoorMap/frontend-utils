@@ -10,9 +10,10 @@
     ".": "./index.js",
     "./postcss": "./src/postcss/index.js",
     "./js/*": "./src/js/*.js",
-    "./hooks/*": "./src/hooks/*.js",
     "./css/*": "./src/css/*.css",
     "./scss/*": "./src/scss/*.scss",
+    "./components/*": "./src/components/*/index.js",
+    "./hooks/*": "./src/hooks/*.js",
     "./icons/*": "./src/icons/*.svg"
   },
   "publishConfig": {
@@ -28,7 +29,13 @@
     "format:css": "stylelint ./src/**/*.css --fix",
     "link:local": "yarn link",
     "unlink:local": "yarn unlink",
+    "_link:local": "yarn link && cd node_modules/react && yarn link && cd ../react-dom && yarn link",
+    "_unlink:local": "yarn unlink && cd node_modules/react && yarn unlink && cd ../react-dom && yarn unlink",
     "compile-sass": "node ./sass.js"
+  },
+  "_peerDependencies": {
+    "react": ">=19",
+    "react-dom": ">=19"
   },
   "devDependencies": {
     "express": "^4.18.2",

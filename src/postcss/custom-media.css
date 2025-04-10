@@ -1,35 +1,40 @@
-/* 480 */
-@custom-media --xsmall-up (width >= 30em);
-@custom-media --xsmall-down (width < 30em);
+$xxsmall: 480;
+$xsmall: 480;
+$small: 640;
+$medium: 768;
+$large: 960;
+$xlarge: 1080;
+$xxlarge: 1200;
+$xxxlarge: 1400;
+$xxxxlarge: 1680;
+$mobile: $medium;
 
-/* 640 */
-@custom-media --small-up (width >= 40em);
-@custom-media --small-down (width < 40em);
+@custom-media --xxsmall-up (width >= emify($xxsmall));
+@custom-media --xxsmall-down (width < emify($xxsmall));
 
-/* 768 */
-@custom-media --medium-up (width >= 48em);
-@custom-media --medium-down (width < 48em);
+@custom-media --xsmall-up (width >= emify($xsmall));
+@custom-media --xsmall-down (width < emify($xsmall));
 
-/* 960 */
-@custom-media --large-up (width >= 60em);
-@custom-media --large-down (width < 60em);
+@custom-media --small-up (width >= emify($small));
+@custom-media --small-down (width < emify($small));
 
-/* 1080 */
-@custom-media --xlarge-up (width >= 67.5em);
-@custom-media --xlarge-down (width < 67.5em);
+@custom-media --medium-up (width >= emify($medium));
+@custom-media --medium-down (width < emify($medium));
 
-/* 1200 */
-@custom-media --xxlarge-up (width >= 75em);
-@custom-media --xxlarge-down (width < 75em);
+@custom-media --large-up (width >= emify($large));
+@custom-media --large-down (width < emify($large));
 
-/* 1400 */
-@custom-media --xxxlarge-up (width >= 87.5em);
-@custom-media --xxxlarge-down (width < 87.5em);
+@custom-media --xlarge-up (width >= emify($xlarge));
+@custom-media --xlarge-down (width < emify($xlarge));
 
-/* 1680 */
-@custom-media --xxxxlarge-up (width >= 105em);
-@custom-media --xxxxlarge-down (width < 105em);
+@custom-media --xxlarge-up (width >= emify($xxlarge));
+@custom-media --xxlarge-down (width < emify($xxlarge));
 
-/* mobile */
-@custom-media --mobile-up (--medium-up);
-@custom-media --mobile-down (--medium-down);
+@custom-media --xxxlarge-up (width >= emify($xxxlarge));
+@custom-media --xxxlarge-down (width < emify($xxxlarge));
+
+@custom-media --xxxxlarge-up (width >= emify($xxxxlarge));
+@custom-media --xxxxlarge-down (width < emify($xxxxlarge));
+
+@custom-media --mobile-up (width >= emify($mobile));
+@custom-media --mobile-down (width < emify($mobile));
