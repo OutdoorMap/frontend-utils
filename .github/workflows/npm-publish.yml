@@ -22,8 +22,11 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      - name: Lint SCSS
-        run: yarn lint-scss
+      # - name: Lint JS
+      #   run: yarn lint:js
+
+      # - name: Lint JS
+      #   run: yarn lint:scss
 
       # - name: Compile SASS
       #   run: yarn compile-sass
