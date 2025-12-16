@@ -1,14 +1,10 @@
 {
-  "private": false,
   "name": "@outdoormap/frontend-utils",
   "description": "Outdoormap > Front End Utilities",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "OutdoorMap <support@outdoormap.com>",
   "license": "MIT",
   "main": "index.js",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "scripts": {
     "demo": "node ./server.js",
     "lint-html": "eslint --ext .html --ext .html.erb app/views",
