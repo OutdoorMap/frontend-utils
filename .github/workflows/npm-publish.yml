@@ -28,6 +28,14 @@ jobs:
       - name: Compile SASS
         run: yarn compile-sass
 
+      - name: Publish the package to npmjs
+        run: |
+          npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
+          npm config set @oddcamp:registry https://registry.npmjs.org/
+          npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
       - name: Publish the package to GPR
         run: |
           npm config set //npm.pkg.github.com/:_authToken=$NODE_AUTH_TOKEN

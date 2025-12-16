@@ -1,7 +1,7 @@
 {
   "name": "@outdoormap/frontend-utils",
   "description": "Outdoormap > Front End Utilities",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "OutdoorMap <support@outdoormap.com>",
   "license": "MIT",
   "main": "index.js",
